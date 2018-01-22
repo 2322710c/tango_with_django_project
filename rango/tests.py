@@ -77,18 +77,18 @@ class ModelTests(TestCase):
             print('Something went wrong in the populate() function :-(')
 
 
-def get_category(self, name):
+    def get_category(self, name):
     
-    from rango.models import Category
+        from rango.models import Category
         try:
             cat = Category.objects.get(name=name)
-    except Category.DoesNotExist:
-        cat = None
-        return cat
+        except Category.DoesNotExist:
+            cat = None
+            return cat
 
-def test_python_cat_added(self):
-    cat = self.get_category('Python')
-    self.assertIsNotNone(cat)
+    def test_python_cat_added(self):
+        cat = self.get_category('Python')
+        self.assertIsNotNone(cat)
     
     def test_python_cat_with_views(self):
         cat = self.get_category('Python')
@@ -142,18 +142,18 @@ class Chapter5ViewTests(TestCase):
             print('Something went wrong in the populate() function :-(')
 
 
-def get_category(self, name):
+    def get_category(self, name):
     
-    from rango.models import Category
+        from rango.models import Category
         try:
             cat = Category.objects.get(name=name)
-    except Category.DoesNotExist:
-        cat = None
+        except Category.DoesNotExist:
+            cat = None
         return cat
 
-def test_python_cat_added(self):
-    cat = self.get_category('Python')
-    self.assertIsNotNone(cat)
+    def test_python_cat_added(self):
+        cat = self.get_category('Python')
+        self.assertIsNotNone(cat)
     
     def test_python_cat_with_views(self):
         cat = self.get_category('Python')
@@ -202,9 +202,9 @@ class Chapter6ViewTests(TestCase):
 # test the slug field works..
 def test_does_slug_field_work(self):
     from rango.models import Category
-        cat = Category(name='how do i create a slug in django')
-        cat.save()
-        self.assertEqual(cat.slug,'how-do-i-create-a-slug-in-django')
+    cat = Category(name='how do i create a slug in django')
+    cat.save()
+    self.assertEqual(cat.slug,'how-do-i-create-a-slug-in-django')
 
 # test category view does the page exist?
 
@@ -233,7 +233,7 @@ class Chapter7ViewTests(TestCase):
         except:
             print('Something else went wrong :-(')
 
-pass
+    pass
 # test is there a PageForm in rango.forms
 
 # test is there a CategoryForm in rango.forms
