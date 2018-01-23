@@ -40,8 +40,8 @@ class PageForm(forms.ModelForm):
 
         # If URL is not empty and doesn't start with 'http://',
         # then prepend 'http://'
-        if url and not url.startwith('http://'):
-            url='http://'+url
+        if url and not url.startswith('http://'):
+            url = 'http://' + url
             cleaned_data['url']=url
 
             return cleaned_data
