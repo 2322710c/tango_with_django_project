@@ -180,6 +180,7 @@ def register(request):
 def user_login(request):
     # If the request is a HTTP POST, try to pull out the relevant information.
     if request.method == 'POST':
+       
         # Gather the username and password provided by the user.
         # This information is obtained from the login form.
         # We use request.POST.get('<variable>') as opposed
@@ -212,6 +213,8 @@ def user_login(request):
             print("Invalid login details : {0},{1}".format(username,password))
             return HttpResponse("Invalid login details supplied.")
 
+
+
         # The request is not a HTTP POST so display the login form.
         # This scenario would most likely be a HTTP GET.
     else:
@@ -222,7 +225,7 @@ def user_login(request):
 
 @login_required
 def retricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request, 'rango/restricted.html',{})
 
 # Use the login_required() decorator to ensure only those logged in can
 # access the view.
